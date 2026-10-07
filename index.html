@@ -7,189 +7,357 @@
   <meta name="description" content="Join us in celebrating our wedding on October 9, 2027 in Huntersville, North Carolina.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Small botanical ornament reused above section titles -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sprig" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 29V9"/><path d="M16 9c0-4 3-6 6-6 0 4-2 6-6 6Z"/><path d="M16 15c0-3-2-5-6-5 0 3 2 5 6 5Z"/><path d="M16 20c0-3 2-5 6-5 0 3-2 5-6 5Z"/><path d="M16 25c0-2-2-4-5-4 0 2 2 4 5 4Z"/>
+  </symbol>
+</svg>
+
 <header class="nav" id="nav">
-  <a class="nav-mark" href="#top">M <span>&amp;</span> M</a>
-  <nav>
-    <a href="#top">Home</a>
+  <a class="nav-mark" href="#top">Marcus <span>&amp;</span> Marie</a>
+  <nav aria-label="Main">
     <a href="#story">Our Story</a>
-    <a href="#details">Details</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#registry">Registry</a>
+    <a href="#venue">Venue</a>
+    <a href="#travel">Travel</a>
+    <a href="#day">The Day</a>
     <a href="#faq">FAQ</a>
+    <a class="nav-btn" href="#registry">Registry</a>
   </nav>
 </header>
 
 <main id="top">
+
+  <!-- HERO -->
   <section class="hero">
     <img class="hero-bg" src="images/hero.jpg" alt="Champagne being poured into a coupe glass held by Marie, engagement ring visible" fetchpriority="high">
-    <div class="hero-text">
-      <p class="eyebrow">October 9, 2027</p>
+    <div class="hero-inner">
+      <p class="crumb">Wedding of Marcus Risch &amp; Marie Morales &nbsp;·&nbsp; Huntersville, NC</p>
       <h1>Marcus <span class="amp">&amp;</span> Marie</h1>
-      <p class="hero-place"><span>The Secret Garden and Estate</span><span class="dot" aria-hidden="true">·</span><span>Huntersville, North Carolina</span></p>
-      <a class="btn" href="#details">View Details</a>
     </div>
   </section>
 
-  <section class="countdown-band" aria-label="Countdown to the wedding">
-    <div class="count"><span id="cd-days">0</span><small>Days</small></div>
-    <div class="count"><span id="cd-hours">0</span><small>Hours</small></div>
-    <div class="count"><span id="cd-mins">0</span><small>Minutes</small></div>
-    <div class="count"><span id="cd-secs">0</span><small>Seconds</small></div>
+  <!-- SAVE THE DATE -->
+  <section class="std">
+    <div class="monogram" aria-hidden="true">M<span>&amp;</span>M</div>
+    <h2>Save the Date</h2>
+    <p class="std-date">October 9, 2027</p>
+    <p class="std-copy">We're getting married, and we couldn't be happier to share this moment with you. Here you'll find all the details — the schedule, the venue, what to wear, where to stay, and more. We can't wait to celebrate with you in Huntersville this October.</p>
+    <div class="countdown" aria-label="Countdown to the wedding">
+      <div class="count"><span id="cd-days">0</span><small>Days</small></div>
+      <div class="count"><span id="cd-hours">0</span><small>Hours</small></div>
+      <div class="count"><span id="cd-mins">0</span><small>Minutes</small></div>
+      <div class="count"><span id="cd-secs">0</span><small>Seconds</small></div>
+    </div>
   </section>
 
-  <section id="story" class="section">
-    <h2>Our Story</h2>
-    <p class="kicker">How it all began</p>
-
-    <article class="story-row">
-      <img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead as she smiles" loading="lazy">
+  <!-- OUR STORY -->
+  <section id="story" class="section story">
+    <article class="story-item">
+      <figure class="polaroid" style="--tilt:-4deg">
+        <img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy" style="object-position: 50% 62%">
+        <figcaption>The First Meeting<small>[Month Year]</small></figcaption>
+      </figure>
       <div class="story-text">
-        <p class="date">[Month Year]</p>
+        <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+        <h2>Our Story</h2>
+        <p class="eyebrow-line">[Month Year] &nbsp;·&nbsp; [Place]</p>
         <h3>The First Meeting</h3>
-        <p>[Tell the story of how you two met — where you were, what you remember, what made it stick.]</p>
+        <p>[Tell the story of how you two met — where you were, what you remember, and what made it stick.]</p>
       </div>
     </article>
 
-    <article class="story-row flip">
-      <img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy">
+    <article class="story-item">
+      <figure class="polaroid" style="--tilt:3deg">
+        <img src="images/sunset-kiss.jpg" alt="Marcus and Marie kissing in a garden in golden sunlight" loading="lazy" style="object-position: 50% 62%">
+        <figcaption>Falling in Love<small>[Month Year]</small></figcaption>
+      </figure>
       <div class="story-text">
-        <p class="date">[Month Year]</p>
+        <p class="eyebrow-line">[Month Year] &nbsp;·&nbsp; [Place]</p>
         <h3>Falling in Love</h3>
         <p>[A few sentences about the moments that made you know — trips, traditions, inside jokes.]</p>
       </div>
     </article>
 
-    <article class="story-row">
-      <img src="images/champagne-pop.jpg" alt="Marcus popping a champagne bottle while Marie laughs" loading="lazy">
+    <article class="story-item">
+      <figure class="polaroid" style="--tilt:-3deg">
+        <img src="images/champagne-pop.jpg" alt="Marcus popping a champagne bottle while Marie laughs" loading="lazy" style="object-position: 50% 78%">
+        <figcaption>The Proposal<small>[Month Year]</small></figcaption>
+      </figure>
       <div class="story-text">
-        <p class="date">[Month Year]</p>
+        <p class="eyebrow-line">[Month Year] &nbsp;·&nbsp; [Place]</p>
         <h3>The Proposal</h3>
         <p>[Tell the story of the proposal.]</p>
       </div>
     </article>
   </section>
 
-  <section id="details" class="section alt">
-    <h2>When &amp; Where</h2>
-    <p class="kicker">Join us for the celebration</p>
-
-    <div class="cards two">
-      <article class="card photo-card">
-        <img src="images/walking-arm-in-arm.jpg" alt="" loading="lazy" style="object-position: 50% 60%">
-        <div class="card-body">
-          <h3>The Ceremony</h3>
-          <p class="strong">Saturday, October 9, 2027</p>
-          <p>[Time] &nbsp;·&nbsp; Guests arrive [Time]</p>
-          <p class="venue"><b>The Secret Garden and Estate</b><br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
-        </div>
-      </article>
-      <article class="card photo-card">
-        <img src="images/champagne-toast.jpg" alt="" loading="lazy" style="object-position: 50% 45%">
-        <div class="card-body">
-          <h3>The Reception</h3>
-          <p class="strong">Saturday, October 9, 2027</p>
-          <p>[Time] &nbsp;·&nbsp; Dinner &amp; dancing</p>
-          <p class="venue"><b>The Secret Garden and Estate</b><br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
-        </div>
-      </article>
+  <!-- VENUE + CAROUSEL -->
+  <section id="venue" class="section venue">
+    <div class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+      <p class="kicker">The venue</p>
+      <h2>We'll see you at The Secret Garden and Estate</h2>
+      <p class="sub-copy">15250 Hus McGinnis Rd, Huntersville, NC 28078</p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=15250+Hus+McGinnis+Rd+Huntersville+NC+28078" target="_blank" rel="noopener">Get Directions</a>
     </div>
 
-    <h3 class="sub">Schedule</h3>
-    <ul class="schedule">
-      <li><time>[4:00 PM]</time><span>Guests arrive</span></li>
-      <li><time>[4:30 PM]</time><span>Ceremony</span></li>
-      <li><time>[5:15 PM]</time><span>Cocktail hour</span></li>
-      <li><time>[6:30 PM]</time><span>Dinner &amp; toasts</span></li>
-      <li><time>[8:00 PM]</time><span>Dancing</span></li>
-      <li><time>[11:00 PM]</time><span>Farewell</span></li>
-    </ul>
+    <div class="carousel-wrap">
+      <div class="carousel" id="carousel" tabindex="0" aria-label="Photo carousel">
+        <figure><img src="images/walking-arm-in-arm.jpg" alt="Marcus and Marie walking arm in arm and smiling at each other" loading="lazy" style="object-position: 50% 55%"></figure>
+        <figure><img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead" loading="lazy" style="object-position: 50% 35%"></figure>
+        <figure><img src="images/champagne-toast.jpg" alt="A champagne toast with the engagement ring visible" loading="lazy" style="object-position: 50% 45%"></figure>
+        <figure><img src="images/champagne-pop.jpg" alt="Marcus popping champagne on stone steps while Marie laughs" loading="lazy" style="object-position: 50% 70%"></figure>
+        <figure><img src="images/sunset-kiss.jpg" alt="Marcus and Marie kissing in a garden in golden sunlight" loading="lazy" style="object-position: 50% 62%"></figure>
+        <figure><img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy" style="object-position: 50% 62%"></figure>
+      </div>
+      <button class="car-btn prev" type="button" aria-label="Previous photo" data-dir="-1">&#8249;</button>
+      <button class="car-btn next" type="button" aria-label="Next photo" data-dir="1">&#8250;</button>
+    </div>
   </section>
 
+  <!-- TRAVEL -->
   <section id="travel" class="section">
-    <h2>Guest Information</h2>
-    <p class="kicker">Everything you need to know</p>
-    <div class="cards three">
-      <article class="card">
-        <h3>Attire</h3>
-        <p class="strong">[Formal / Cocktail / Semi-formal]</p>
-        <p>[Notes on dress code, e.g. outdoor ceremony, bring a layer for the evening.]</p>
-      </article>
-      <article class="card">
-        <h3>Where to Stay</h3>
-        <p>[Hotel name] has a room block under “Risch–Morales Wedding” until [cutoff date].</p>
-        <p><a class="link" href="#">Book your room</a></p>
-      </article>
-      <article class="card">
-        <h3>Getting There</h3>
-        <p>[Nearest airport, driving directions, parking, and shuttle information.]</p>
-      </article>
+    <div class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+      <p class="kicker">Getting here</p>
+      <h2>Travel &amp; Transportation</h2>
     </div>
-  </section>
-
-  <section id="gallery" class="section alt">
-    <h2>Gallery</h2>
-    <p class="kicker">A few moments we love</p>
-    <div class="mosaic">
-      <figure class="tall"><img src="images/walking-arm-in-arm.jpg" alt="Marcus and Marie walking arm in arm and smiling at each other" loading="lazy"></figure>
-      <figure><img src="images/champagne-toast.jpg" alt="A champagne toast with the engagement ring visible" loading="lazy"></figure>
-      <figure><img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead" loading="lazy" style="object-position: 50% 30%"></figure>
-      <figure class="tall"><img src="images/champagne-pop.jpg" alt="Marcus popping champagne on stone steps while Marie laughs" loading="lazy"></figure>
-      <figure><img src="images/sunset-kiss.jpg" alt="Marcus and Marie kissing in a garden in golden sunlight" loading="lazy" style="object-position: 50% 65%"></figure>
-      <figure><img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy" style="object-position: 50% 70%"></figure>
-    </div>
-  </section>
-
-  <section id="registry" class="section">
-    <div class="callout">
+    <div class="cols three">
       <div>
-        <p class="date">Registry</p>
-        <h3>Celebrate with us</h3>
-        <p>Your presence is the greatest gift. If you'd like to give something, we've put together a registry.</p>
+        <p class="idx">01</p>
+        <h3>By Air</h3>
+        <p>The nearest major airport is Charlotte Douglas International (CLT). [Add rental car and rideshare notes.]</p>
       </div>
-      <div class="buttons">
-        <a class="btn" href="#">[Registry One]</a>
-        <a class="btn ghost" href="#">[Registry Two]</a>
+      <div>
+        <p class="idx">02</p>
+        <h3>By Car</h3>
+        <p>The venue is at 15250 Hus McGinnis Rd, Huntersville. [Add parking and directions notes.]</p>
+      </div>
+      <div>
+        <p class="idx">03</p>
+        <h3>Getting Around</h3>
+        <p>[Shuttle, rideshare or carpool information for guests.]</p>
       </div>
     </div>
   </section>
 
-  <section id="faq" class="section alt">
-    <h2>Questions</h2>
-    <p class="kicker">Good to know</p>
-    <div class="faq">
-      <details><summary>Can I bring a guest?</summary><p>[Your answer.]</p></details>
-      <details><summary>Are children welcome?</summary><p>[Your answer.]</p></details>
-      <details><summary>Is the venue accessible?</summary><p>[Your answer.]</p></details>
-      <details><summary>Who do I contact with questions?</summary><p>[Name, email, or phone.]</p></details>
+  <!-- STAY -->
+  <section id="stay" class="section">
+    <div class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+      <p class="kicker">Where to stay</p>
+      <h2>Where to sleep, rest, and recover after the party</h2>
+    </div>
+    <div class="cols three stay">
+      <article>
+        <div class="ph-img"><span>[Add hotel photo]</span></div>
+        <h3>[Hotel name]</h3>
+        <p>[Room block under “Risch–Morales Wedding” until [cutoff date]. A short note about distance to the venue.]</p>
+        <a class="link" href="#">View hotel &rarr;</a>
+      </article>
+      <article>
+        <div class="ph-img"><span>[Add hotel photo]</span></div>
+        <h3>[Hotel name]</h3>
+        <p>[Short note about the property, price range, and distance to the venue.]</p>
+        <a class="link" href="#">View hotel &rarr;</a>
+      </article>
+      <article>
+        <div class="ph-img"><span>[Add rental / inn photo]</span></div>
+        <h3>[Inn or rental]</h3>
+        <p>[Short note about the property, price range, and distance to the venue.]</p>
+        <a class="link" href="#">View property &rarr;</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- PRE-WEDDING GATHERING -->
+  <section id="gathering" class="section">
+    <div class="gather">
+      <figure class="gather-photo">
+        <div class="ph-img wide"><span>[Add rehearsal dinner photo]</span></div>
+        <figcaption>Join us the night before the wedding.</figcaption>
+      </figure>
+      <div class="gather-card">
+        <svg class="orn left" aria-hidden="true"><use href="#sprig"/></svg>
+        <p class="kicker left">The night before</p>
+        <h2>Welcome Gathering</h2>
+        <p>[If you're hosting a rehearsal dinner or welcome drinks, describe it here. Delete this section if not.]</p>
+        <dl class="facts">
+          <div><dt>Date</dt><dd>[Friday, October 8, 2027]</dd></div>
+          <div><dt>Time</dt><dd>[Time]</dd></div>
+          <div><dt>Location</dt><dd>[Venue / address]</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WEDDING DAY TIMELINE -->
+  <section id="day" class="section">
+    <div class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+      <p class="kicker">Saturday, October 9, 2027</p>
+      <h2>The Wedding Day</h2>
+      <p class="sub-copy">Everything takes place at The Secret Garden and Estate. Here's how the day will unfold.</p>
+    </div>
+
+    <ol class="timeline">
+      <li>
+        <figure class="polaroid sm" style="--tilt:-3deg"><img src="images/walking-arm-in-arm.jpg" alt="" loading="lazy" style="object-position: 50% 55%"></figure>
+        <div class="tl-text">
+          <p class="time">[4:30 PM]</p>
+          <h3>Ceremony</h3>
+          <p>[Guests are seated by 4:15 PM. A line or two about the ceremony.]</p>
+        </div>
+      </li>
+      <li>
+        <figure class="polaroid sm" style="--tilt:3deg"><img src="images/champagne-toast.jpg" alt="" loading="lazy" style="object-position: 50% 45%"></figure>
+        <div class="tl-text">
+          <p class="time">[5:15 PM]</p>
+          <h3>Drinks &amp; Mingle</h3>
+          <p>[Cocktail hour details — drinks, bites, lawn games.]</p>
+        </div>
+      </li>
+      <li>
+        <figure class="polaroid sm" style="--tilt:-2deg"><img src="images/champagne-pop.jpg" alt="" loading="lazy" style="object-position: 50% 72%"></figure>
+        <div class="tl-text">
+          <p class="time">[6:30 PM]</p>
+          <h3>Dinner &amp; Toasts</h3>
+          <p>[Dinner details and toasts.]</p>
+        </div>
+      </li>
+      <li>
+        <figure class="polaroid sm" style="--tilt:3deg"><img src="images/sunset-kiss.jpg" alt="" loading="lazy" style="object-position: 50% 62%"></figure>
+        <div class="tl-text">
+          <p class="time">[8:00 PM]</p>
+          <h3>Party &amp; Dancing</h3>
+          <p>[Dancing until [time]. Farewell at [time].]</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- REGISTRY BANNER -->
+  <section id="registry" class="section wide">
+    <div class="gift">
+      <img src="images/champagne-toast.jpg" alt="" loading="lazy">
+      <div class="gift-inner">
+        <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+        <p class="kicker">Registry</p>
+        <h2>Your presence is truly the greatest gift.</h2>
+        <p>If you'd like to give something, we've put together a registry. Thank you for celebrating with us.</p>
+        <div class="buttons">
+          <a class="btn" href="#">[Registry One]</a>
+          <a class="btn ghost" href="#">[Registry Two]</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRESS CODE -->
+  <section id="dress" class="section">
+    <div class="sec-head">
+      <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+      <p class="kicker">What to wear</p>
+      <h2>The Dress Code</h2>
+      <p class="sub-copy">[Formal / Cocktail / Semi-formal.] The ceremony is outdoors, so plan for grass and an October evening. Our palette is autumnal — warm earth tones are welcome.</p>
+    </div>
+    <ul class="swatches" aria-label="Suggested colors">
+      <li style="--c:#A4502B"><span>Terracotta</span></li>
+      <li style="--c:#6E6C3A"><span>Olive</span></li>
+      <li style="--c:#C48F2E"><span>Mustard</span></li>
+      <li style="--c:#7A5A44"><span>Cocoa</span></li>
+    </ul>
+    <div class="cols two dress">
+      <div><h3>For Him</h3><p>[Suggestions for suits, jackets, and shoes.]</p></div>
+      <div><h3>For Her</h3><p>[Suggestions for dresses and shoes — heels can sink in grass.]</p></div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="contact">
+      <img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead as she smiles" loading="lazy" style="object-position: 50% 40%">
+      <div class="contact-text">
+        <svg class="orn left" aria-hidden="true"><use href="#sprig"/></svg>
+        <p class="kicker left">Questions?</p>
+        <h2>We can't wait to celebrate this day with you.</h2>
+        <p>If you have any questions about the weekend, reach out to us any time.</p>
+        <ul class="contact-list">
+          <li><b>Email</b> [email address]</li>
+          <li><b>Phone</b> [phone number]</li>
+        </ul>
+        <a class="btn" href="mailto:">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="qa">
+      <div class="qa-head">
+        <svg class="orn left" aria-hidden="true"><use href="#sprig"/></svg>
+        <p class="kicker left">FAQ</p>
+        <h2>Questions &amp; Answers</h2>
+        <p>We've answered a few common questions to help you prepare for the day. Reach out if you need anything else.</p>
+      </div>
+      <div class="faq">
+        <details><summary>Can I bring a guest?</summary><p>[Your answer.]</p></details>
+        <details><summary>Are children welcome?</summary><p>[Your answer.]</p></details>
+        <details><summary>Is the venue accessible?</summary><p>[Your answer.]</p></details>
+        <details><summary>What if it rains?</summary><p>[Your answer.]</p></details>
+        <details><summary>Who do I contact with questions?</summary><p>[Name, email, or phone.]</p></details>
+      </div>
     </div>
   </section>
 </main>
 
-<footer class="footer">
-  <p class="script">With love, Marcus &amp; Marie</p>
-  <p class="small">October 9, 2027 &nbsp;·&nbsp; Huntersville, NC</p>
+<footer class="foot">
+  <nav aria-label="Footer">
+    <a href="#top">Home</a><a href="#story">Story</a><a href="#travel">Travel</a><a href="#faq">FAQ</a><a href="#registry">Registry</a>
+  </nav>
+  <p>Marcus &amp; Marie &nbsp;·&nbsp; October 9, 2027</p>
 </footer>
+
+<section class="finale">
+  <img src="images/banner.jpg" alt="Marcus and Marie smiling at each other on a garden path, in black and white" loading="lazy">
+  <div class="finale-card">
+    <svg class="orn" aria-hidden="true"><use href="#sprig"/></svg>
+    <h2>We can't wait to celebrate this special day with you.</h2>
+    <p>October 9, 2027 &nbsp;·&nbsp; The Secret Garden and Estate &nbsp;·&nbsp; Huntersville, NC</p>
+    <a class="btn" href="#top">Back to Top</a>
+  </div>
+</section>
 
 <script>
   // Ceremony start, Eastern time (EDT, UTC-4). Change the time here once it's final.
   var WEDDING = new Date("2027-10-09T16:30:00-04:00");
-  var ids = ["days", "hours", "mins", "secs"].map(function (k) { return document.getElementById("cd-" + k); });
+  var els = ["days", "hours", "mins", "secs"].map(function (k) { return document.getElementById("cd-" + k); });
   function tick() {
     var s = Math.max(0, Math.floor((WEDDING - new Date()) / 1000));
     var v = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60];
-    ids.forEach(function (el, i) { el.textContent = v[i]; });
+    els.forEach(function (el, i) { el.textContent = v[i]; });
   }
   tick(); setInterval(tick, 1000);
 
-  // Nav turns solid once you scroll past the hero.
+  // Nav turns solid once you scroll.
   var nav = document.getElementById("nav");
   function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Carousel arrows.
+  var car = document.getElementById("carousel");
+  document.querySelectorAll(".car-btn").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var slide = car.querySelector("figure");
+      car.scrollBy({ left: Number(b.dataset.dir) * (slide.offsetWidth + 20), behavior: "smooth" });
+    });
+  });
 </script>
 </body>
 </html>
