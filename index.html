@@ -7,18 +7,18 @@
   <meta name="description" content="Join us in celebrating our wedding on October 9, 2027 in Huntersville, North Carolina.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="nav">
-  <a class="nav-mark" href="#top">M &amp; M</a>
+<header class="nav" id="nav">
+  <a class="nav-mark" href="#top">M <span>&amp;</span> M</a>
   <nav>
+    <a href="#top">Home</a>
     <a href="#story">Our Story</a>
     <a href="#details">Details</a>
-    <a href="#travel">Travel</a>
-    <a href="#photos">Photos</a>
+    <a href="#gallery">Gallery</a>
     <a href="#registry">Registry</a>
     <a href="#faq">FAQ</a>
   </nav>
@@ -28,40 +28,74 @@
   <section class="hero">
     <img class="hero-bg" src="images/hero.jpg" alt="Champagne being poured into a coupe glass held by Marie, engagement ring visible" fetchpriority="high">
     <div class="hero-text">
-    <p class="eyebrow">We're getting married</p>
-    <h1>Marcus <span class="amp">&amp;</span> Marie</h1>
-    <p class="hero-date"><span>October 9, 2027</span><span class="dot" aria-hidden="true">·</span><span>Huntersville, NC</span></p>
-    <p id="countdown" class="countdown" aria-live="polite"></p>
+      <p class="eyebrow">October 9, 2027</p>
+      <h1>Marcus <span class="amp">&amp;</span> Marie</h1>
+      <p class="hero-place"><span>The Secret Garden and Estate</span><span class="dot" aria-hidden="true">·</span><span>Huntersville, North Carolina</span></p>
+      <a class="btn" href="#details">View Details</a>
     </div>
+  </section>
+
+  <section class="countdown-band" aria-label="Countdown to the wedding">
+    <div class="count"><span id="cd-days">0</span><small>Days</small></div>
+    <div class="count"><span id="cd-hours">0</span><small>Hours</small></div>
+    <div class="count"><span id="cd-mins">0</span><small>Minutes</small></div>
+    <div class="count"><span id="cd-secs">0</span><small>Seconds</small></div>
   </section>
 
   <section id="story" class="section">
     <h2>Our Story</h2>
-    <ol class="timeline">
-      <li><span class="when">[Year]</span><h3>How we met</h3><p>[A few sentences about how you met.]</p></li>
-      <li><span class="when">[Year]</span><h3>The first date</h3><p>[A few sentences about your first date.]</p></li>
-      <li><span class="when">[Year]</span><h3>Moving in together</h3><p>[Replace with a milestone of your own.]</p></li>
-      <li><span class="when">[Year]</span><h3>The proposal</h3><p>[Tell the story of the proposal.]</p></li>
-    </ol>
+    <p class="kicker">How it all began</p>
+
+    <article class="story-row">
+      <img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead as she smiles" loading="lazy">
+      <div class="story-text">
+        <p class="date">[Month Year]</p>
+        <h3>The First Meeting</h3>
+        <p>[Tell the story of how you two met — where you were, what you remember, what made it stick.]</p>
+      </div>
+    </article>
+
+    <article class="story-row flip">
+      <img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy">
+      <div class="story-text">
+        <p class="date">[Month Year]</p>
+        <h3>Falling in Love</h3>
+        <p>[A few sentences about the moments that made you know — trips, traditions, inside jokes.]</p>
+      </div>
+    </article>
+
+    <article class="story-row">
+      <img src="images/champagne-pop.jpg" alt="Marcus popping a champagne bottle while Marie laughs" loading="lazy">
+      <div class="story-text">
+        <p class="date">[Month Year]</p>
+        <h3>The Proposal</h3>
+        <p>[Tell the story of the proposal.]</p>
+      </div>
+    </article>
   </section>
 
   <section id="details" class="section alt">
-    <h2>The Details</h2>
-    <div class="cards">
-      <article class="card">
-        <h3>Ceremony</h3>
-        <p class="strong">[Time]</p>
-        <p>The Secret Garden and Estate<br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
+    <h2>When &amp; Where</h2>
+    <p class="kicker">Join us for the celebration</p>
+
+    <div class="cards two">
+      <article class="card photo-card">
+        <img src="images/walking-arm-in-arm.jpg" alt="" loading="lazy" style="object-position: 50% 60%">
+        <div class="card-body">
+          <h3>The Ceremony</h3>
+          <p class="strong">Saturday, October 9, 2027</p>
+          <p>[Time] &nbsp;·&nbsp; Guests arrive [Time]</p>
+          <p class="venue"><b>The Secret Garden and Estate</b><br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
+        </div>
       </article>
-      <article class="card">
-        <h3>Reception</h3>
-        <p class="strong">[Time]</p>
-        <p>The Secret Garden and Estate<br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
-      </article>
-      <article class="card">
-        <h3>Attire</h3>
-        <p class="strong">[Formal / Cocktail / Semi-formal]</p>
-        <p>[Notes on dress code, e.g. outdoor ceremony, bring a layer for the evening.]</p>
+      <article class="card photo-card">
+        <img src="images/champagne-toast.jpg" alt="" loading="lazy" style="object-position: 50% 45%">
+        <div class="card-body">
+          <h3>The Reception</h3>
+          <p class="strong">Saturday, October 9, 2027</p>
+          <p>[Time] &nbsp;·&nbsp; Dinner &amp; dancing</p>
+          <p class="venue"><b>The Secret Garden and Estate</b><br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
+        </div>
       </article>
     </div>
 
@@ -77,43 +111,56 @@
   </section>
 
   <section id="travel" class="section">
-    <h2>Travel &amp; Stay</h2>
-    <div class="cards two">
+    <h2>Guest Information</h2>
+    <p class="kicker">Everything you need to know</p>
+    <div class="cards three">
       <article class="card">
-        <h3>Where to stay</h3>
+        <h3>Attire</h3>
+        <p class="strong">[Formal / Cocktail / Semi-formal]</p>
+        <p>[Notes on dress code, e.g. outdoor ceremony, bring a layer for the evening.]</p>
+      </article>
+      <article class="card">
+        <h3>Where to Stay</h3>
         <p>[Hotel name] has a room block under “Risch–Morales Wedding” until [cutoff date].</p>
         <p><a class="link" href="#">Book your room</a></p>
       </article>
       <article class="card">
-        <h3>Getting there</h3>
+        <h3>Getting There</h3>
         <p>[Nearest airport, driving directions, parking, and shuttle information.]</p>
       </article>
     </div>
   </section>
 
-  <section id="photos" class="section alt">
-    <h2>Photos</h2>
-    <div class="gallery">
-      <figure><img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead as she smiles, seated on stone steps" loading="lazy"></figure>
-      <figure><img src="images/sunset-kiss.jpg" alt="Marcus and Marie kissing in a garden path in golden sunlight" loading="lazy"></figure>
-      <figure><img src="images/champagne-pop.jpg" alt="Marcus popping a champagne bottle on stone steps while Marie laughs" loading="lazy"></figure>
-      <figure><img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands and walking down a garden path" loading="lazy"></figure>
-      <figure><img src="images/champagne-toast.jpg" alt="A champagne toast between two coupe glasses, with an engagement ring visible" loading="lazy"></figure>
-      <figure><img src="images/walking-arm-in-arm.jpg" alt="Marcus and Marie walking arm in arm and smiling at each other" loading="lazy"></figure>
+  <section id="gallery" class="section alt">
+    <h2>Gallery</h2>
+    <p class="kicker">A few moments we love</p>
+    <div class="mosaic">
+      <figure class="tall"><img src="images/walking-arm-in-arm.jpg" alt="Marcus and Marie walking arm in arm and smiling at each other" loading="lazy"></figure>
+      <figure><img src="images/champagne-toast.jpg" alt="A champagne toast with the engagement ring visible" loading="lazy"></figure>
+      <figure><img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead" loading="lazy" style="object-position: 50% 30%"></figure>
+      <figure class="tall"><img src="images/champagne-pop.jpg" alt="Marcus popping champagne on stone steps while Marie laughs" loading="lazy"></figure>
+      <figure><img src="images/sunset-kiss.jpg" alt="Marcus and Marie kissing in a garden in golden sunlight" loading="lazy" style="object-position: 50% 65%"></figure>
+      <figure><img src="images/walking-garden.jpg" alt="Marcus and Marie holding hands on a garden path" loading="lazy" style="object-position: 50% 70%"></figure>
     </div>
   </section>
 
   <section id="registry" class="section">
-    <h2>Registry</h2>
-    <p class="lede">Your presence is the greatest gift. If you'd like to give something, we've put together a registry.</p>
-    <div class="buttons">
-      <a class="btn" href="#">[Registry One]</a>
-      <a class="btn ghost" href="#">[Registry Two]</a>
+    <div class="callout">
+      <div>
+        <p class="date">Registry</p>
+        <h3>Celebrate with us</h3>
+        <p>Your presence is the greatest gift. If you'd like to give something, we've put together a registry.</p>
+      </div>
+      <div class="buttons">
+        <a class="btn" href="#">[Registry One]</a>
+        <a class="btn ghost" href="#">[Registry Two]</a>
+      </div>
     </div>
   </section>
 
   <section id="faq" class="section alt">
     <h2>Questions</h2>
+    <p class="kicker">Good to know</p>
     <div class="faq">
       <details><summary>Can I bring a guest?</summary><p>[Your answer.]</p></details>
       <details><summary>Are children welcome?</summary><p>[Your answer.]</p></details>
@@ -125,19 +172,24 @@
 
 <footer class="footer">
   <p class="script">With love, Marcus &amp; Marie</p>
+  <p class="small">October 9, 2027 &nbsp;·&nbsp; Huntersville, NC</p>
 </footer>
 
 <script>
-  // Set your wedding date and time here (local time of the venue).
-  var WEDDING = new Date("2027-10-09T16:30:00");
-  var el = document.getElementById("countdown");
+  // Ceremony start, Eastern time (EDT, UTC-4). Change the time here once it's final.
+  var WEDDING = new Date("2027-10-09T16:30:00-04:00");
+  var ids = ["days", "hours", "mins", "secs"].map(function (k) { return document.getElementById("cd-" + k); });
   function tick() {
-    var d = WEDDING - new Date();
-    if (isNaN(d)) { el.textContent = ""; return; }
-    if (d <= 0) { el.textContent = "Today is the day!"; return; }
-    el.textContent = Math.floor(d / 864e5) + " days to go";
+    var s = Math.max(0, Math.floor((WEDDING - new Date()) / 1000));
+    var v = [Math.floor(s / 86400), Math.floor(s % 86400 / 3600), Math.floor(s % 3600 / 60), s % 60];
+    ids.forEach(function (el, i) { el.textContent = v[i]; });
   }
-  tick(); setInterval(tick, 36e5);
+  tick(); setInterval(tick, 1000);
+
+  // Nav turns solid once you scroll past the hero.
+  var nav = document.getElementById("nav");
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
+  onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
 </script>
 </body>
 </html>
