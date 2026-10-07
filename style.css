@@ -26,10 +26,12 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; marg
 .nav nav a { text-decoration: none; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
 .nav nav a:hover { color: var(--rust); }
 
-.hero { min-height: 82vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-  padding: 80px 24px; background: radial-gradient(ellipse at 50% 30%, var(--cream-deep), var(--cream) 70%); }
+.hero { min-height: 86vh; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 56px;
+  padding: 64px max(24px, calc((100% - 1040px) / 2)); background: radial-gradient(ellipse at 30% 30%, var(--cream-deep), var(--cream) 70%); }
+.hero-text { text-align: center; }
+.hero-photo { width: 100%; max-height: 78vh; object-fit: cover; aspect-ratio: 2 / 3; border-radius: 12px; border: 1px solid var(--line); justify-self: center; max-width: 440px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .32em; font-size: 13px; color: var(--olive); margin: 0 0 20px; }
-.hero h1 { font-size: clamp(48px, 10vw, 112px); color: var(--ink); }
+.hero h1 { font-size: clamp(44px, 6.2vw, 84px); color: var(--ink); }
 .amp { font-style: italic; color: var(--rust); padding: 0 .1em; }
 .hero-date { font-size: 18px; letter-spacing: .2em; text-transform: uppercase; margin: 28px 0 8px; }
 .countdown { font-family: var(--serif); font-style: italic; font-size: 24px; color: var(--mustard); margin: 0; }
@@ -81,6 +83,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.1; marg
 .script { font-family: var(--serif); font-style: italic; font-size: 28px; margin: 0; }
 
 @media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; padding: 48px 24px; min-height: 0; }
+  .hero-photo { max-height: 60vh; }
   .nav { padding: 12px 16px; flex-direction: column; gap: 8px; }
   .nav nav { justify-content: center; gap: 14px; }
   .cards, .cards.two { grid-template-columns: 1fr; }
