@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcus &amp; Marie — Wedding</title>
+  <meta name="description" content="Join us in celebrating our wedding on October 9, 2027 in Huntersville, North Carolina.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-mark" href="#top">M &amp; M</a>
+  <nav>
+    <a href="#story">Our Story</a>
+    <a href="#details">Details</a>
+    <a href="#travel">Travel</a>
+    <a href="#photos">Photos</a>
+    <a href="#registry">Registry</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <p class="eyebrow">We're getting married</p>
+    <h1>Marcus <span class="amp">&amp;</span> Marie</h1>
+    <p class="hero-date">October 9, 2027 &nbsp;·&nbsp; Huntersville, NC</p>
+    <p id="countdown" class="countdown" aria-live="polite"></p>
+  </section>
+
+  <section id="story" class="section">
+    <h2>Our Story</h2>
+    <ol class="timeline">
+      <li><span class="when">[Year]</span><h3>How we met</h3><p>[A few sentences about how you met.]</p></li>
+      <li><span class="when">[Year]</span><h3>The first date</h3><p>[A few sentences about your first date.]</p></li>
+      <li><span class="when">[Year]</span><h3>Moving in together</h3><p>[Replace with a milestone of your own.]</p></li>
+      <li><span class="when">[Year]</span><h3>The proposal</h3><p>[Tell the story of the proposal.]</p></li>
+    </ol>
+  </section>
+
+  <section id="details" class="section alt">
+    <h2>The Details</h2>
+    <div class="cards">
+      <article class="card">
+        <h3>Ceremony</h3>
+        <p class="strong">[Time]</p>
+        <p>The Secret Garden and Estate<br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
+      </article>
+      <article class="card">
+        <h3>Reception</h3>
+        <p class="strong">[Time]</p>
+        <p>The Secret Garden and Estate<br>15250 Hus McGinnis Rd<br>Huntersville, NC 28078</p>
+      </article>
+      <article class="card">
+        <h3>Attire</h3>
+        <p class="strong">[Formal / Cocktail / Semi-formal]</p>
+        <p>[Notes on dress code, e.g. outdoor ceremony, bring a layer for the evening.]</p>
+      </article>
+    </div>
+
+    <h3 class="sub">Schedule</h3>
+    <ul class="schedule">
+      <li><time>[4:00 PM]</time><span>Guests arrive</span></li>
+      <li><time>[4:30 PM]</time><span>Ceremony</span></li>
+      <li><time>[5:15 PM]</time><span>Cocktail hour</span></li>
+      <li><time>[6:30 PM]</time><span>Dinner &amp; toasts</span></li>
+      <li><time>[8:00 PM]</time><span>Dancing</span></li>
+      <li><time>[11:00 PM]</time><span>Farewell</span></li>
+    </ul>
+  </section>
+
+  <section id="travel" class="section">
+    <h2>Travel &amp; Stay</h2>
+    <div class="cards two">
+      <article class="card">
+        <h3>Where to stay</h3>
+        <p>[Hotel name] has a room block under “Risch–Morales Wedding” until [cutoff date].</p>
+        <p><a class="link" href="#">Book your room</a></p>
+      </article>
+      <article class="card">
+        <h3>Getting there</h3>
+        <p>[Nearest airport, driving directions, parking, and shuttle information.]</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="photos" class="section alt">
+    <h2>Photos</h2>
+    <p class="lede">Add your photos to the <code>images</code> folder and swap the placeholders below.</p>
+    <div class="gallery">
+      <figure class="ph"><figcaption>Photo 1</figcaption></figure>
+      <figure class="ph"><figcaption>Photo 2</figcaption></figure>
+      <figure class="ph"><figcaption>Photo 3</figcaption></figure>
+      <figure class="ph"><figcaption>Photo 4</figcaption></figure>
+      <figure class="ph"><figcaption>Photo 5</figcaption></figure>
+      <figure class="ph"><figcaption>Photo 6</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="registry" class="section">
+    <h2>Registry</h2>
+    <p class="lede">Your presence is the greatest gift. If you'd like to give something, we've put together a registry.</p>
+    <div class="buttons">
+      <a class="btn" href="#">[Registry One]</a>
+      <a class="btn ghost" href="#">[Registry Two]</a>
+    </div>
+  </section>
+
+  <section id="faq" class="section alt">
+    <h2>Questions</h2>
+    <div class="faq">
+      <details><summary>Can I bring a guest?</summary><p>[Your answer.]</p></details>
+      <details><summary>Are children welcome?</summary><p>[Your answer.]</p></details>
+      <details><summary>Is the venue accessible?</summary><p>[Your answer.]</p></details>
+      <details><summary>Who do I contact with questions?</summary><p>[Name, email, or phone.]</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p class="script">With love, Marcus &amp; Marie</p>
+</footer>
+
+<script>
+  // Set your wedding date and time here (local time of the venue).
+  var WEDDING = new Date("2027-10-09T16:30:00");
+  var el = document.getElementById("countdown");
+  function tick() {
+    var d = WEDDING - new Date();
+    if (isNaN(d)) { el.textContent = ""; return; }
+    if (d <= 0) { el.textContent = "Today is the day!"; return; }
+    el.textContent = Math.floor(d / 864e5) + " days to go";
+  }
+  tick(); setInterval(tick, 36e5);
+</script>
+</body>
+</html>
