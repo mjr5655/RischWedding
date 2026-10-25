@@ -8,7 +8,8 @@ The RSVP form on the site sends each response to a small Google Apps Script, whi
 ## 2. Add the script
 1. In the sheet: **Extensions → Apps Script**.
 2. Delete the placeholder code, paste in everything from [`apps-script/Code.gs`](apps-script/Code.gs), and click **Save**.
-3. *(Optional)* Put your email in `NOTIFY_EMAIL` at the top to get an email for every RSVP.
+3. Set `SPREADSHEET_ID` at the top to your sheet's ID: the long code in the sheet's address bar, `https://docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit`. This makes the script write to the right sheet no matter how it was created.
+4. *(Optional)* Put your email in `NOTIFY_EMAIL` at the top to get an email for every RSVP.
 
 ## 3. Deploy it as a web app
 1. Click **Deploy → New deployment**, then the gear icon → **Web app**.
@@ -27,6 +28,7 @@ var RSVP_ENDPOINT = "";
 Commit and push. Once GitHub Pages redeploys, submit a test RSVP on the site. A new row (and a bold header row, created automatically) appears on the **RSVPs** tab of your sheet. Delete your test row afterwards.
 
 ## Good to know
+- **Rows not showing up?** In Apps Script, open **Executions**. A `doPost` marked "Completed" can still have returned an error (for example, if `SPREADSHEET_ID` isn't set). Check the website's message, and make sure you're looking at the **RSVPs** tab.
 - **Changing the script later:** after editing `Code.gs`, use **Deploy → Manage deployments → ✏️ → Version: New version → Deploy**. The URL stays the same. Just saving is not enough.
 - **Privacy:** the sheet stays private to you. Anyone who knows the `/exec` URL can *submit* a row, but can't read anything. The script ignores spam (a hidden honeypot field), caps field lengths, and neutralises spreadsheet formulas typed into the form.
 - **Columns:** Timestamp, Name, Email, Attending, Party size, Guest names, Dietary notes, Song request, Message. You can add your own columns to the right (for example, a "Meal" or "Invited" column) without breaking anything.

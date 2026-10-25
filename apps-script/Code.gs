@@ -1,11 +1,14 @@
 /**
  * RSVP receiver for the wedding site.
  *
- * Bound to a Google Sheet (Extensions → Apps Script). Deploy as a Web app:
+ * Set SPREADSHEET_ID below to your RSVP sheet. Deploy as a Web app:
  *   Execute as: Me   |   Who has access: Anyone
  * Each form submission becomes one row on the "RSVPs" tab.
  */
 
+// The ID of the Google Sheet that should receive RSVPs: the long code in the sheet's URL,
+//   https://docs.google.com/spreadsheets/d/<THIS PART>/edit
+var SPREADSHEET_ID = '';
 var SHEET_NAME = 'RSVPs';
 var NOTIFY_EMAIL = '';   // optional: an address to email on every RSVP (leave '' to disable)
 var HEADERS = ['Timestamp', 'Name', 'Email', 'Attending', 'Party size', 'Guest names', 'Dietary notes', 'Song request', 'Message'];
@@ -57,7 +60,8 @@ function doGet() {
 }
 
 function sheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SPREADSHEET_ID ? SpreadsheetApp.openById(SPREADSHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
+  if (!ss) throw new Error('Set SPREADSHEET_ID at the top of the script.');
   var sheet = ss.getSheetByName(SHEET_NAME) || ss.insertSheet(SHEET_NAME);
   if (sheet.getLastRow() === 0) {
     sheet.appendRow(HEADERS);
