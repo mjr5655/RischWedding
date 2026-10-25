@@ -7,3 +7,4 @@ Static site (no build step). Host on GitHub Pages in its own repo.
 3. The `CNAME` file already contains `rischwedding.com`. Point the domain's DNS at GitHub Pages
    (A records 185.199.108.153 / .109.153 / .110.153 / .111.153, or a CNAME to `<user>.github.io`).
 4. Search `index.html` for `[` to find every placeholder. Set the countdown date in the script at the bottom.
+5. RSVPs: follow [RSVP_SETUP.md](RSVP_SETUP.md) to connect the form to a Google Sheet.

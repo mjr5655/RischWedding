@@ -26,8 +26,9 @@
     <a href="#venue">Venue</a>
     <a href="#travel">Travel</a>
     <a href="#day">The Day</a>
+    <a href="#registry">Registry</a>
     <a href="#faq">FAQ</a>
-    <a class="nav-btn" href="#registry">Registry</a>
+    <a class="nav-btn" href="#rsvp">RSVP</a>
   </nav>
 </header>
 
@@ -39,6 +40,7 @@
     <div class="hero-inner">
       <p class="crumb">Wedding of Marcus Risch &amp; Marie Morales &nbsp;·&nbsp; Huntersville, NC</p>
       <h1>Marcus <span class="amp">&amp;</span> Marie</h1>
+      <a class="btn hero-btn" href="#rsvp">RSVP</a>
     </div>
   </section>
 
@@ -279,20 +281,71 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section">
+  <!-- RSVP -->
+  <section id="rsvp" class="section">
     <div class="contact">
       <img src="images/forehead-kiss.jpg" alt="Marcus kissing Marie's forehead as she smiles" loading="lazy" style="object-position: 50% 40%">
       <div class="contact-text">
         <svg class="orn left" aria-hidden="true"><use href="#sprig"/></svg>
-        <p class="kicker left">Questions?</p>
-        <h2>We can't wait to celebrate this day with you.</h2>
-        <p>If you have any questions about the weekend, reach out to us any time.</p>
-        <ul class="contact-list">
-          <li><b>Email</b> [email address]</li>
-          <li><b>Phone</b> [phone number]</li>
-        </ul>
-        <a class="btn" href="mailto:">Get in Touch</a>
+        <p class="kicker left">RSVP</p>
+        <h2>Will you join us?</h2>
+        <p class="rsvp-lede">Kindly reply by <b>[Month Day, 2027]</b>. One response per household is perfect.</p>
+
+        <form id="rsvp-form" class="rsvp-form" novalidate>
+          <div class="field">
+            <label for="rsvp-name">Your full name <span aria-hidden="true">*</span></label>
+            <input id="rsvp-name" name="name" type="text" autocomplete="name" maxlength="120" required>
+          </div>
+          <div class="field">
+            <label for="rsvp-email">Email <span aria-hidden="true">*</span></label>
+            <input id="rsvp-email" name="email" type="email" autocomplete="email" maxlength="160" required>
+          </div>
+
+          <fieldset class="field choice">
+            <legend>Will you be attending? <span aria-hidden="true">*</span></legend>
+            <label><input type="radio" name="attending" value="yes" required><span>Joyfully accepts</span></label>
+            <label><input type="radio" name="attending" value="no"><span>Regretfully declines</span></label>
+          </fieldset>
+
+          <div id="rsvp-yes" class="rsvp-yes" hidden>
+            <div class="field">
+              <label for="rsvp-party">How many will attend, including you?</label>
+              <select id="rsvp-party" name="partySize">
+                <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="rsvp-guests">Names of everyone in your party</label>
+              <textarea id="rsvp-guests" name="guestNames" rows="2" maxlength="1000"></textarea>
+            </div>
+            <div class="field">
+              <label for="rsvp-diet">Dietary restrictions or allergies</label>
+              <input id="rsvp-diet" name="dietary" type="text" maxlength="500">
+            </div>
+            <div class="field">
+              <label for="rsvp-song">A song that will get you on the dance floor</label>
+              <input id="rsvp-song" name="song" type="text" maxlength="200">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="rsvp-msg">A note for the couple <span class="opt">(optional)</span></label>
+            <textarea id="rsvp-msg" name="message" rows="3" maxlength="2000"></textarea>
+          </div>
+
+          <!-- Honeypot: hidden from people, tempting to bots. -->
+          <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+
+          <button class="btn" type="submit" id="rsvp-submit">Send RSVP</button>
+          <p id="rsvp-status" class="rsvp-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div id="rsvp-done" class="rsvp-done" hidden tabindex="-1">
+          <h3 id="rsvp-done-title">Thank you!</h3>
+          <p id="rsvp-done-text"></p>
+        </div>
+
+        <p class="rsvp-help">Questions? Email <b>[email address]</b> or call <b>[phone number]</b>.</p>
       </div>
     </div>
   </section>
@@ -349,6 +402,63 @@
   var nav = document.getElementById("nav");
   function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 40); }
   onScroll(); window.addEventListener("scroll", onScroll, { passive: true });
+
+
+  // ---- RSVP ----
+  // Paste your Google Apps Script web app URL here (see RSVP_SETUP.md). Ends in /exec.
+  var RSVP_ENDPOINT = "";
+
+  var form = document.getElementById("rsvp-form");
+  var yes = document.getElementById("rsvp-yes");
+  var statusEl = document.getElementById("rsvp-status");
+  var submitBtn = document.getElementById("rsvp-submit");
+
+  form.addEventListener("change", function (e) {
+    if (e.target.name === "attending") yes.hidden = e.target.value !== "yes";
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    statusEl.className = "rsvp-status";
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      statusEl.textContent = "Please fill in the required fields.";
+      statusEl.className = "rsvp-status error";
+      return;
+    }
+    var fd = new FormData(form);
+    var payload = {};
+    fd.forEach(function (v, k) { payload[k] = v; });
+    var attending = payload.attending === "yes";
+
+    function done() {
+      form.hidden = true;
+      var box = document.getElementById("rsvp-done");
+      document.getElementById("rsvp-done-title").textContent = attending ? "We can't wait to see you!" : "We'll miss you!";
+      document.getElementById("rsvp-done-text").textContent = attending
+        ? "Your RSVP is in, " + payload.name.split(" ")[0] + ". Watch your inbox for more details as the day gets closer."
+        : "Thank you for letting us know, " + payload.name.split(" ")[0] + ". We'll be thinking of you on the day.";
+      box.hidden = false; box.focus();
+    }
+
+    if (payload.website) { done(); return; }            // honeypot tripped: pretend it worked
+    if (!RSVP_ENDPOINT) {
+      statusEl.textContent = "RSVP isn't connected yet. Please email us your reply instead.";
+      statusEl.className = "rsvp-status error";
+      return;
+    }
+
+    submitBtn.disabled = true; submitBtn.textContent = "Sending…";
+    // text/plain keeps this a "simple" request, so the browser doesn't need a CORS preflight.
+    fetch(RSVP_ENDPOINT, { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(payload) })
+      .then(function (r) { return r.json(); })
+      .then(function (res) { if (res.result !== "success") throw new Error(res.error || "failed"); done(); })
+      .catch(function () {
+        submitBtn.disabled = false; submitBtn.textContent = "Send RSVP";
+        statusEl.textContent = "Sorry, something went wrong and your RSVP wasn't saved. Please try again, or email us.";
+        statusEl.className = "rsvp-status error";
+      });
+  });
 
   // Carousel arrows.
   var car = document.getElementById("carousel");

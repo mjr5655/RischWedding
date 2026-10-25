@@ -33,7 +33,7 @@ p { margin: 0 0 14px; }
 .link { color: var(--rust); font-weight: 500; text-decoration: none; letter-spacing: .04em; }
 .link:hover { text-decoration: underline; text-underline-offset: 4px; }
 
-.btn { display: inline-block; padding: 13px 32px; border-radius: 999px; background: var(--rust); color: var(--card); text-decoration: none;
+.btn { font-family: var(--sans); font-weight: 400; cursor: pointer; display: inline-block; padding: 13px 32px; border-radius: 999px; background: var(--rust); color: var(--card); text-decoration: none;
   font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; border: 1px solid var(--rust); transition: background .2s, color .2s; }
 .btn:hover { background: var(--rust-dark); border-color: var(--rust-dark); }
 .btn.ghost { background: transparent; color: var(--rust); }
@@ -234,3 +234,33 @@ p { margin: 0 0 14px; }
   .finale::after { display: none; }
   .finale-card { position: relative; margin: -72px 16px 0; background: var(--card); }
 }
+
+/* RSVP */
+.hero-btn { margin-top: 26px; text-shadow: none; box-shadow: 0 6px 20px rgba(44,31,24,.35); }
+.rsvp-lede { color: var(--ink-soft); margin-bottom: 20px; }
+.rsvp-lede b { color: var(--ink); font-weight: 500; }
+.rsvp-form .field { margin: 0 0 16px; border: 0; padding: 0; min-width: 0; }
+.rsvp-form label, .rsvp-form legend { display: block; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; padding: 0; }
+.rsvp-form .opt { text-transform: none; letter-spacing: 0; font-size: 13px; }
+.rsvp-form input[type="text"], .rsvp-form input[type="email"], .rsvp-form select, .rsvp-form textarea {
+  width: 100%; font: 300 16px/1.4 var(--sans); color: var(--ink); background: var(--cream); border: 1px solid var(--line); border-radius: 8px; padding: 11px 13px; }
+.rsvp-form textarea { resize: vertical; }
+.rsvp-form input:focus, .rsvp-form select:focus, .rsvp-form textarea:focus { outline: 2px solid var(--rust); outline-offset: 1px; border-color: var(--rust); }
+.rsvp-form .choice { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rsvp-form .choice legend { grid-column: 1 / -1; }
+.rsvp-form .choice label { margin: 0; cursor: pointer; text-transform: none; letter-spacing: .02em; font-size: 15px; color: var(--ink); }
+.rsvp-form .choice input { position: absolute; opacity: 0; pointer-events: none; }
+.rsvp-form .choice label span { display: block; text-align: center; padding: 12px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--cream); transition: background .15s, border-color .15s, color .15s; }
+.rsvp-form .choice input:checked + span { background: var(--rust); border-color: var(--rust); color: var(--card); }
+.rsvp-form .choice input:focus-visible + span { outline: 2px solid var(--rust); outline-offset: 2px; }
+.rsvp-yes[hidden], .rsvp-done[hidden], .rsvp-form[hidden] { display: none; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.rsvp-status { min-height: 1.4em; margin: 12px 0 0; font-size: 14px; color: var(--ink-soft); }
+.rsvp-status.error { color: var(--rust-dark); }
+.rsvp-form .btn[disabled] { opacity: .65; cursor: wait; }
+.rsvp-done { padding: 18px 0 6px; outline: 0; }
+.rsvp-done h3 { font-size: 32px; color: var(--rust); margin-bottom: 8px; }
+.rsvp-done p { color: var(--ink-soft); }
+.rsvp-help { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-soft); }
+.rsvp-help b { font-weight: 500; color: var(--ink); }
+@media (max-width: 720px) { .rsvp-form .choice { grid-template-columns: 1fr; } }
