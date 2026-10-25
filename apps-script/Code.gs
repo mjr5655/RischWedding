@@ -48,6 +48,7 @@ function doPost(e) {
     }
     return json_({ result: 'success' });
   } catch (err) {
+    console.error(String(err));   // shows up under Executions → click the row
     return json_({ result: 'error', error: String(err) });
   } finally {
     lock.releaseLock();
@@ -79,4 +80,11 @@ function clean_(value, max) {
 
 function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Run this from the editor (choose "testSheet" in the dropdown, then Run) to check the setup.
+// It asks for permission the first time, and logs either the sheet it will write to, or the exact problem.
+function testSheet() {
+  var sheet = sheet_();
+  Logger.log('OK. RSVPs will be written to: ' + sheet.getParent().getUrl());
 }
